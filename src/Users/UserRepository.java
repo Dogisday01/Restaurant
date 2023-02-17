@@ -1,11 +1,14 @@
 package Users;
 
+import Users.Interface.IUserRepository;
+
+
 import java.sql.*;
 
 public class UserRepository {
 
     private static String URL = "jdbc:mysql://localhost:3306/users";
-    public static String CreateUser(String name,String pass,int balance){
+    public static String createUser(String name, String pass, int balance){
         Connection con = null;
         String s = "";
         try{
@@ -26,7 +29,7 @@ public class UserRepository {
         return s;
     }
 
-    public static String LogIn (String name, String pass){
+    public static String logIn(String name, String pass){
         Connection con = null;
         String s = "";
         try{
@@ -45,7 +48,7 @@ public class UserRepository {
         }
         return s;
     }
-    public static String deleteUser(String name,String pass) {
+    public static String deleteUser(String name, String pass) {
         Connection con = null;
         String s = "";
         try {
